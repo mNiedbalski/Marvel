@@ -1,7 +1,7 @@
 
 package pl.polsl.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,14 +12,14 @@ public class Superhero implements Comparable<Superhero> {
         String id;
         String charname;
         String birthname;
-        List <String> types;
-        List <String> universes;
+        ArrayList <String> types;
+        ArrayList <String> universes;
         String birthplace;
-        List <String> superpowers;
-        List <String> religions;
+        ArrayList <String> superpowers;
+        ArrayList <String> religions;
         String gender;
-        List <String> occupation;
-        List <String> memberof;
+        ArrayList <String> occupation;
+        ArrayList <String> memberof;
         public Superhero(){}
         
         public int compare(Superhero s1, Superhero s2){
@@ -49,28 +49,28 @@ public class Superhero implements Comparable<Superhero> {
         public void setBirthname(String _birthname){
             this.birthname = _birthname;
         }
-        public void setTypes(List<String> _types){
+        public void setTypes(ArrayList<String> _types){
             this.types= _types;
         }
-        public void setUniverses(List<String> _universes){
+        public void setUniverses(ArrayList<String> _universes){
             this.universes= _universes;
         }
         public void setBirthplace(String _birthplace){
             this.birthplace = _birthplace;
         }
-        public void setSuperpowers(List<String> _superpowers){
+        public void setSuperpowers(ArrayList<String> _superpowers){
             this.superpowers= _superpowers;
         }
-        public void setReligions(List<String> _religions){
+        public void setReligions(ArrayList<String> _religions){
             this.religions= _religions;
         }
         public void setGender(String _gender){
             this.gender = _gender;
         }
-        public void setOccupations(List<String> _occupations){
+        public void setOccupations(ArrayList<String> _occupations){
             this.occupation= _occupations;
         }
-        public void setMemberof(List<String> _memberof){
+        public void setMemberof(ArrayList<String> _memberof){
             this.memberof= _memberof;
         }
         
@@ -84,28 +84,28 @@ public class Superhero implements Comparable<Superhero> {
         public String getBirthname(){
             return this.birthname;
         }
-        public List<String> getTypes(){
+        public ArrayList<String> getTypes(){
             return this.types;
         }
-        public List<String> getUniverses(){
+        public ArrayList<String> getUniverses(){
             return this.universes;
         }
         public String getBirthplace(){
             return this.birthplace;
         }
-        public List<String> getSuperpowers(){
+        public ArrayList<String> getSuperpowers(){
             return this.superpowers;
         }
-        public List<String> getReligions(){
+        public ArrayList<String> getReligions(){
             return this.religions;
         }
         public String getGender(){
             return this.gender;
         }
-        public List<String> getOccupations(){
+        public ArrayList<String> getOccupations(){
             return this.occupation;
         }
-        public List<String> getMemberof(){
+        public ArrayList<String> getMemberof(){
             return this.memberof;
         }
 

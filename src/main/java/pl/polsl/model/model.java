@@ -1,9 +1,16 @@
 
 package pl.polsl.model;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
+import org.apache.commons.csv.*;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
@@ -59,6 +66,37 @@ public class model {
         return _fileData;
         
     }*/
+    public void LoadFile(){
+        try {
+            int counter =0;
+            Reader reader = Files.newBufferedReader(Paths.get("E:/JWIiUM/Marvel Characters.csv"));
+            //CSVParser = CSVFormat.RFC4180.withHeader("char","charname","birthname","types","universes","birthplace","superpowers","religions","gender","occupation","memberof").parse(in);
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
+                    .withFirstRecordAsHeader()
+                    .withIgnoreHeaderCase()
+                    .withTrim());
+            for (CSVRecord csvRecord: csvParser){               
+                    Superhero temp = new Superhero();
+                    temp.setTypes(ParseStringIntoArrayList(csvRecord.get("types")));
+                    
+                    String columnTwo = csvRecord.get("universes");
+            }
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found exception!");
+        }
+        catch (IOException e2){
+            System.out.println("IOException!");
+        }
+        
+    }
+    public ArrayList<String> ParseStringIntoArrayList(String parsedString){
+       String[] parsed;
+       parsed = parsedString.split(",");
+       ArrayList <String> converted = new ArrayList<String>(Arrays.asList(parsed));
+       return converted;
+       
+    }
     
     /**
      * 
