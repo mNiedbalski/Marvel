@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.csv.*;
 import org.apache.commons.lang3.ArrayUtils;
@@ -24,9 +23,13 @@ public class LogicalOperations {
 
     private ArrayList<String> universes = new ArrayList();
         
-    public void model () {
-       // this.universes = new ArrayList();
-    }
+    public void LogicalOperations () {}
+    /**
+     * Method that loads only unique universes into program. 
+     * 
+     * After some time I realised I could have just used HashSet structure, so therefore I wouldn't have to check if any universe is already in my ArrayList.
+     * 
+     */
     public void LoadUniverses (ArrayList<Superhero> _database) {
         String tempUniverse = _database.get(0).getUniverses().get(0);
         this.universes.add(tempUniverse);
@@ -50,12 +53,12 @@ public class LogicalOperations {
     }
 
      /**
-     * Loads CSV file into array of lines.
-     * Read whole line into String line
-     * Separate using String[] TempString = line.split(",");
-     * 
-     * @return string of lines from csv file
-     * @param input Name of the input file.
+     * Method using great features from commons-csv library in order to load data from .csv file into application.
+     * In every iteration of for loop a temporary Superhero is created, who will have it's attributes assigned using method csvRecord.get().
+     * In specific case where superhero's attribute is an array of elements, the string read from one cell from .csv file is being parsed by method ParseStringIntoArrayList().
+     * After every attribute is assigned, superhero is added to the database in program.
+     * @param fileName Name of the input file.
+     * @param _database ArrayList of superheroes that stores data in program.
      */
     public void LoadFile(String fileName, ArrayList<Superhero> _database){
         try {
@@ -89,29 +92,18 @@ public class LogicalOperations {
         }
         
     }
+    /**
+     * Method used to split one string with commas into many strings connected into one ArrayList of strings.
+     * 
+     * @param parsedString String that has been passed from Loading method in order to be parsed.
+     * @return converted ArrayList of Strings that can be assigned as class parameter whenever it is an ArrayList of Strings.
+     */
     public ArrayList<String> ParseStringIntoArrayList(String parsedString){
        String[] parsed;
        parsed = parsedString.split(","); 
-       //Long int zmienna = parsed.toLongInt();
-       //return zmienna;
-       ArrayList <String> converted = new ArrayList<String>(Arrays.asList(parsed));
+       ArrayList <String> converted = new ArrayList<>(Arrays.asList(parsed));
        return converted;
-       
     }
-    
-    /**
-     * 
-     * Processes data therefore creating database of superheroes in program.
-     * Algorithm:
-     * If an item has " at the beginning, add those items to templist of attributes and set bool found to true
-     * If an item has " at the end, finish adding items to temp list of attributes and set bool to false
-     * Add superhero to database in program
-     * Clear temp elements and in another iteration start from beginning 
-     * 
-     * @param fileData 
-     * @return ArrayList of superheroes
-     */
-
      /**
      * 
      * Finding superhero with the biggest amount of superpowers.

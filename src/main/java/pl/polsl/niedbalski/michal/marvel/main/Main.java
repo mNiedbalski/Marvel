@@ -12,7 +12,6 @@ public class Main {
     
         public static void main(String[] args) {
             Controller myController = new Controller(args);
-            UserInterface Interface = new UserInterface();
        // LogicalOperations model = new LogicalOperations();
        // ArrayList<Superhero> database = new ArrayList();
        /// model.LoadFile(args[0],database);

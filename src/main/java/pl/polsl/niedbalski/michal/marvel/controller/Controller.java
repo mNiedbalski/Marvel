@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import pl.polsl.niedbalski.michal.marvel.model.LogicalOperations;
 import pl.polsl.niedbalski.michal.marvel.model.Superhero;
+import pl.polsl.niedbalski.michal.marvel.view.NumberOutOfBoundsException;
+import pl.polsl.niedbalski.michal.marvel.view.UserInterface;
 
 /**
  *
@@ -11,11 +13,22 @@ import pl.polsl.niedbalski.michal.marvel.model.Superhero;
  */
 public final class Controller {
     
+    public Controller () {};
     public Controller(String[] _params){
         LogicalOperations model = new LogicalOperations();
         ArrayList<Superhero> database = new ArrayList();
         Check(_params);
         model.LoadFile(_params[0],database);
+        Options(database);
+    }
+    public void MainPart(){
+        UserInterface Interface = new UserInterface();
+       // try {
+        //Interface.Options();
+       // }
+       // catch (NumberOutOfBoundsException e){
+       //     e.printStackTrace();
+       // }
     }
     /**
      * Gets a string of parameters using command line.
@@ -36,7 +49,45 @@ public final class Controller {
             fileName = _params[0];
         return fileName;
     }
-    public void LoadData(){
+    public void Options(ArrayList<Superhero> _database){
+        boolean quit = false;
+        LogicalOperations logic = new LogicalOperations();
+        logic.LoadUniverses(_database);
+        UserInterface Interface = new UserInterface();
+        while (!quit){
+            System.out.println("Please select an option: \n1. View superhero with biggest amount of superpowers.\n2.Display heroes affiliated with chosen universe.\n3.Display the value of Pearson's correlation factor.\n4.Quit\n");
+            try{
+                switch (ChooseAnOption(4)){
+                    case 1 -> {
+                        Interface.DisplaySuperhero(logic.FindWithMostSuperpowers(_database));
+                    }
+                    case 2 -> {
+                        Interface.PrintArrayList(logic.getUniverses());
+                        ChooseAnOption(logic.getUniverses().size());
+                        //Printing heroes' names
+                    }
+                    case 3 -> {
+                        System.out.println("Pearson's correlation factor value between number of types of superhero and number of universes equals: " + logic.CalculatePearsonCorrelation(_database));
+                    }
+                    case 4 -> {
+                        quit = true;
+                    }
+                    default -> {
+                        //throw new NumberOutOfBounds("Invalid option! Please try again.\n");
+                    }
+                }
+            }
+            catch (NumberOutOfBoundsException e){
+                
+            }
+        }
+    }
+    public int ChooseAnOption(int n) throws NumberOutOfBoundsException{
+        int choice = 0;
+        Scanner myInput = new Scanner(System.in);
+        choice = myInput.nextInt();
+        //Exception should be somewhere here when (choice < 0 || choice > n)
+        return choice;
         
     }
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class Superhero implements Comparable<Superhero> {
-        String id;
+        String id; //char
         String charname;
         String birthname;
         ArrayList <String> types;
@@ -26,6 +26,14 @@ public class Superhero implements Comparable<Superhero> {
             return s1.superpowers.size() - s2.superpowers.size();
         }
         @Override
+        /**
+         * Overrided method of comparation.
+         * It has been overrided in order to be used in sort function provided by java.util.Collections class.
+         * @param s compared superhero
+         * @return 0 when amount of superpowers are equal.
+         * @return -1 when the other superhero has less superpowers.
+         * @return 1 when the other superhero has more superpowers.
+         */
          public int compareTo(Superhero s) {
              if (this.getSuperpowers().size()==s.getSuperpowers().size())
                  return 0;
