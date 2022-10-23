@@ -3,6 +3,8 @@ package pl.polsl.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
 
@@ -120,8 +122,34 @@ public class model {
         }
         return heroesAffiliated;
     }
-    public void CalculatePearsonCorrelation(){
-    
+    private ArrayList<Double> CollectTypesIntoArray(ArrayList<Superhero> _database){
+        ArrayList<Double> tempArray = new ArrayList();
+        for (Superhero supe: _database){
+            Double d = Double.valueOf(supe.getTypes().size());
+            tempArray.add(d);
+        }  
+        return tempArray;
+    }
+    private ArrayList<Double> CollectUniversesIntoArray(ArrayList<Superhero> _database){
+        ArrayList<Double> tempArray = new ArrayList();
+        for (Superhero supe: _database){
+            Double d = Double.valueOf(supe.getUniverses().size());
+            tempArray.add(d);
+        }  
+        return tempArray;
+    }
+    public double CalculatePearsonCorrelation(ArrayList<Superhero> _database){
+        ArrayList<Double> typeArray = CollectTypesIntoArray(_database);
+        ArrayList<Double> universeArray = CollectUniversesIntoArray(_database);
+        Double[] arr = new Double[typeArray.size()];
+        arr = typeArray.toArray(arr);
+        double[] tArray= ArrayUtils.toPrimitive(arr);
+        Double[] arr2 = new Double[universeArray.size()];
+        arr2 = typeArray.toArray(arr2);
+        double[] uArray= ArrayUtils.toPrimitive(arr2);
+        double corr = new PearsonsCorrelation().correlation(tArray,uArray);
+        System.out.println(corr);
+        return corr;
     }
     public ArrayList<Superhero> Test (){
         ArrayList<Superhero> tempDatabase = new ArrayList();
@@ -133,6 +161,7 @@ public class model {
         ArrayList<String> typy = new ArrayList();
         typy.add("wind");
         typy.add("electric");
+        typy.add("fire");
         first.setTypes(typy);
         ArrayList<String> univ = new ArrayList();
         univ.add("poland");

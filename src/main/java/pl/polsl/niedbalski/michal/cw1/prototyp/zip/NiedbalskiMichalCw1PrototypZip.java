@@ -20,7 +20,7 @@ public class NiedbalskiMichalCw1PrototypZip {
         model.MySort(database);
         model.LoadUniverses(database);
         ArrayList<Superhero> affiliated = model.DisplayAffiliation("marvel", database);
-
+        model.CalculatePearsonCorrelation(database);
         kontroler myKontroler = new kontroler();
         myKontroler.Check(args);
         myKontroler.LoadData();
