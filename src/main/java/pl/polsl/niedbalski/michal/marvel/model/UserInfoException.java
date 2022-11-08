@@ -1,7 +1,6 @@
 package pl.polsl.niedbalski.michal.marvel.model;
 
 /**
- *
  * @author Michał Niedbalski
  * @version 2.0
  */
@@ -11,7 +10,7 @@ package pl.polsl.niedbalski.michal.marvel.model;
  */
 public class UserInfoException extends Exception {
 
-    public UserInfoException(String errorMessage){
+    public UserInfoException(String errorMessage) {
         super(errorMessage);
     }
 
