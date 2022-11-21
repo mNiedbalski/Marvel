@@ -1,139 +1,99 @@
 package pl.polsl.niedbalski.michal.marvel.view;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Set;
-
+import pl.polsl.niedbalski.michal.marvel.controller.Controller;
+import pl.polsl.niedbalski.michal.marvel.controller.DisplayingAffiliation;
 import pl.polsl.niedbalski.michal.marvel.model.Superhero;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Set;
+
 /**
- * Class representing user interface in program.
+ * Class handling all user input and output.
+ * This class is representing view in MVC pattern.
  *
  * @author Michał Niedbalski
- * @version 2.0
+ * @version 3.0
  */
 public class UserInterface {
-    public UserInterface() {
-    }
-
-    ;
+    public UserInterface() {}
 
     /**
-     * Method displaying the name of input file.
+     * Method returning string containing all data about superhero with most superpowers.
      *
-     * @param input name of the input file.
+     * @param hero Hero whose parameters are parsed into string.
      */
-
-    public void display(String input) {
-        System.out.println("Full path of the input file:" + input);
+    public String displaySuperhero(Superhero hero) {
+        String allParamsOfSuperhero = "";
+        allParamsOfSuperhero+="char: " + hero.getId() + "\n";
+        allParamsOfSuperhero+="\ncharname: " + hero.getCharName() + "\n";
+        allParamsOfSuperhero+="\nbirthname: " + hero.getBirthName() + "\n";
+        allParamsOfSuperhero+="\ntypes:\n" + printArrayList(hero.getTypes());
+        allParamsOfSuperhero+="\nuniverses:\n" + printArrayList(hero.getUniverses());
+        allParamsOfSuperhero+="\nbirthplace: " + hero.getBirthplace() + "\n";
+        allParamsOfSuperhero+="\nsuperpowers:\n" + printArrayList(hero.getSuperpowers());
+        allParamsOfSuperhero+="\nreligions:\n" + printArrayList(hero.getReligions());
+        allParamsOfSuperhero+="\ngender: " + hero.getGender() + "\n";
+        allParamsOfSuperhero+="\noccupations:\n" + printArrayList(hero.getOccupations());
+        allParamsOfSuperhero+="\nmember of:\n" + printArrayList(hero.getMemberof());
+        return allParamsOfSuperhero;
     }
-
     /**
-     * Method displaying arraylist of superheroes
+     * Method that parses ArrayList into String.
      *
-     * @param superheroes
+     * @param array array to be parsed.
      */
-    public void displaySuperheroes(ArrayList<Superhero> superheroes) {
-        for (Superhero supe : superheroes) {
-            displaySuperhero(supe);
-            System.out.println("\n");
-        }
-    }
-
-    /**
-     * Method displaying superhero with most superpowers
-     *
-     * @param hero Displayed superhero
-     */
-    public void displaySuperhero(Superhero hero) {
-        System.out.println("char: " + hero.getId() + "\n");
-        System.out.println("charname: " + hero.getCharName() + "\n");
-        System.out.println("birthname: " + hero.getBirthName() + "\n");
-        System.out.println("types: ");
-        printArrayList(hero.getTypes());
-        System.out.println("universes: ");
-        printArrayList(hero.getUniverses());
-        System.out.println("birthplace: " + hero.getBirthplace() + "\n");
-        System.out.println("superpowers: ");
-        printArrayList(hero.getSuperpowers());
-        System.out.println("religions: ");
-        printArrayList(hero.getReligions());
-        System.out.println("gender: " + hero.getGender() + "\n");
-        System.out.println("occupation: ");
-        printArrayList(hero.getOccupations());
-        System.out.println("memberof: ");
-        printArrayList(hero.getMemberof());
-
-    }
-
-    /**
-     * Method that prints inputted ArrayList
-     *
-     * @param array
-     */
-    public void printArrayList(ArrayList<String> array) {
+    public String printArrayList(ArrayList<String> array) {
+        String temp = "";
         if (!array.isEmpty()) {
             for (String element : array)
                 if (!element.isBlank()) {
-                    System.out.println(element + ", ");
+                    temp += element + ", \n";
                 }
         }
-    }
-
-    /**
-     * Method that prints inputted set
-     *
-     * @param set
-     */
-    public void printSet(Set<String> set) {
-        int counter = 1;
-        for (String element : set) {
-            System.out.println(counter + ". " + element);
-            counter++;
+        else{
+            temp = "none";
         }
+        return temp;
+    }
+    /**
+     * Method returning pearSonCorrelationFactor calculated beforehand in model.
+     * @param pearsonCorrelationFactor Value of Pearson's Correlation coefficient.
+     */
+    public String displayPearsonCorrelation(double pearsonCorrelationFactor) {
+        return "" + pearsonCorrelationFactor;
     }
 
     /**
-     * If no parameters have been inputted, program asks for input in console.
-     * After this process, name of the input file is displayed.
-     *
-     * @return fileName Name of the .csv file with database.
+     * Method initializing and showing GUI to user.
+     * Every user's input is handled by GUI.
+     * @param passedParams Passed parameters to the program.
      */
-    public String setFilename() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the path to the .csv file (with quotation mark at beginning and end): ");
-        String fileName = scanner.next();
-        return fileName;
+    public void createAndShowGUI(String[] passedParams) {
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame = new JFrame("Marvel program");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JComponent newContentPane = new Controller(passedParams);
+        newContentPane.setOpaque(true);
+        frame.setContentPane(newContentPane);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     /**
-     * Method that displays options available to user and proceeds further depending on given options.
+     * Method initializing tree that is used to show superheroes affiliated with specific universes.
+     * @param superheroes Database of superheroes.
+     * @param universes Set of unique universes.
      */
-    public void displayMainOptions() {
-        System.out.println("Please select an option: \n1. View superhero with biggest amount of superpowers.\n2.Display heroes affiliated with chosen universe.\n3.Display the value of Pearson's correlation factor.\n4.Quit\n");
-    }
+    public void createAndShowTree(ArrayList<Superhero> superheroes, Set<String> universes) {
 
-    /**
-     * @param n Index of chosen option
-     * @return
-     */
-    public int chooseAnOption(int n) throws InputMismatchException {
-        Scanner myInput = new Scanner(System.in);
-        int choice = myInput.nextInt();
-        return choice;
-    }
-
-    public void pausingApp() {
-        System.out.println("Some inputted data is wrong... \nPress Any Key To Continue The Application...");
-        new Scanner(System.in).nextLine();
-    }
-
-    public void choosingUniverseText() {
-        System.out.println("Please input the number of chosen universe and accept with ENTER: ");
-    }
-
-    public void displayPearsonCorrelation(double pearsonCorrelationFactor) {
-        System.out.println("Pearson's correlation factor value between number of types of superhero and number of universes equals: " + pearsonCorrelationFactor);
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame = new JFrame("Browse universes");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        DisplayingAffiliation newContentPane = new DisplayingAffiliation(superheroes,universes);
+        newContentPane.setOpaque(true);
+        frame.setContentPane(newContentPane);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

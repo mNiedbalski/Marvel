@@ -1,31 +1,59 @@
-
 package pl.polsl.niedbalski.michal.marvel.model;
-
 import java.util.ArrayList;
 
 /**
+ * Class representing superhero in application.
  * @author Michał Niedbalski
- * @version 2.0
+ * @version 3.0
  */
 public class Superhero implements Comparable<Superhero> {
-    String id; //char
+    /**
+     * Class field representing "char" column in database.
+     */
+    String id;
+    /**
+     * Class field representing "character name" column in database.
+     */
     String charName;
+    /**
+     * Class field representing "birth name" column in database.
+     */
     String birthName;
+    /**
+     * Class representing "types" column in database.
+     */
     ArrayList<String> types;
+    /**
+     * Class representing "universes" column in database.
+     */
     ArrayList<String> universes;
+    /**
+     * Class field representing "birthplace" column in database.
+     */
     String birthplace;
+    /**
+     * Class field representing "superpowers" in database.
+     */
     ArrayList<String> superpowers;
+    /**
+     * Class field representing "religions" column in database.
+     */
     ArrayList<String> religions;
+    /**
+     * Class field representing "gender" column in database.
+     */
     String gender;
+    /**
+     * Class field representing "occupation" column in database.
+     */
     ArrayList<String> occupation;
+    /**
+     * Class field representing "member of" column in database.
+     */
     ArrayList<String> memberof;
 
-    public Superhero() {
-    }
+    public Superhero() {}
 
-    public int compare(Superhero s1, Superhero s2) {
-        return s1.superpowers.size() - s2.superpowers.size();
-    }
 
     @Override
     /**
@@ -49,93 +77,93 @@ public class Superhero implements Comparable<Superhero> {
 
     //Setters
 
-    public void setId(String _id) {
-        this.id = _id;
+    public void setId(String passedId) {
+        this.id = passedId;
     }
 
-    public void setCharName(String _charname) {
-        this.charName = _charname;
+    public void setCharName(String passedCharname) {
+        this.charName = passedCharname;
     }
 
-    public void setBirthName(String _birthname) {
-        this.birthName = _birthname;
+    public void setBirthName(String passedBirthName) {
+        this.birthName = passedBirthName;
     }
 
-    public void setTypes(ArrayList<String> _types) {
-        this.types = _types;
+    public void setTypes(ArrayList<String> passedTypes) {
+        this.types = passedTypes;
     }
 
-    public void setUniverses(ArrayList<String> _universes) {
-        this.universes = _universes;
+    public void setUniverses(ArrayList<String> passedUniverses) {
+        this.universes = passedUniverses;
     }
 
-    public void setBirthplace(String _birthplace) {
-        this.birthplace = _birthplace;
+    public void setBirthplace(String passedBirthplace) {
+        this.birthplace = passedBirthplace;
     }
 
-    public void setSuperpowers(ArrayList<String> _superpowers) {
-        this.superpowers = _superpowers;
+    public void setSuperpowers(ArrayList<String> passedSuperpowers) {
+        this.superpowers = passedSuperpowers;
     }
 
-    public void setReligions(ArrayList<String> _religions) {
-        this.religions = _religions;
+    public void setReligions(ArrayList<String> passedReligions) {
+        this.religions = passedReligions;
     }
 
-    public void setGender(String _gender) {
-        this.gender = _gender;
+    public void setGender(String passedGender) {
+        this.gender = passedGender;
     }
 
-    public void setOccupations(ArrayList<String> _occupations) {
-        this.occupation = _occupations;
+    public void setOccupations(ArrayList<String> passedOccupations) {
+        this.occupation = passedOccupations;
     }
 
-    public void setMemberof(ArrayList<String> _memberof) {
-        this.memberof = _memberof;
+    public void setMemberof(ArrayList<String> passedMemberOf) {
+        this.memberof = passedMemberOf;
     }
 
     //Getters
     public String getId() {
-        return this.id;
+        return id;
     }
 
     public String getCharName() {
-        return this.charName;
+        return charName;
     }
 
     public String getBirthName() {
-        return this.birthName;
+        return birthName;
     }
 
     public ArrayList<String> getTypes() {
-        return this.types;
+        return types;
     }
 
     public ArrayList<String> getUniverses() {
-        return this.universes;
+        return universes;
     }
 
     public String getBirthplace() {
-        return this.birthplace;
+        return birthplace;
     }
 
     public ArrayList<String> getSuperpowers() {
-        return this.superpowers;
+        return superpowers;
     }
 
     public ArrayList<String> getReligions() {
-        return this.religions;
+        return religions;
     }
 
     public String getGender() {
-        return this.gender;
+        return gender;
     }
 
     public ArrayList<String> getOccupations() {
-        return this.occupation;
+        return occupation;
     }
 
     public ArrayList<String> getMemberof() {
-        return this.memberof;
+        return memberof;
     }
 
 }

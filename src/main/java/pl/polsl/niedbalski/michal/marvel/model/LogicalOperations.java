@@ -1,7 +1,11 @@
-
 package pl.polsl.niedbalski.michal.marvel.model;
 
-import java.io.File;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
@@ -9,35 +13,40 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
-import org.apache.commons.lang3.ArrayUtils;
-
+import java.util.stream.Collectors;
 
 /**
+ * Class handling all data processing and giving outputs. This class is representing model in MVC pattern.
  * @author Michał Niedbalski
  * @version 2.0
  */
 public class LogicalOperations {
 
+    /**
+     * Set containing unique universes.
+     */
     private Set<String> universes = new HashSet<>();
+    /**
+     * Class field representing database of the program.
+     */
     private ArrayList<Superhero> database = new ArrayList<>();
+    /**
+     * Class field storing information about file path.
+     */
     private Path filePath;
 
     /**
      * Method that checks, whether parameters were inputted or not and if not, exception is thrown
      *
-     * @param _params Parameters inputted into program
+     * @param passedParams Parameters inputted into program
+     * @return fileName
      */
-    private String check(String[] _params) throws FileNotFoundException {
+    private String check(String[] passedParams) throws FileNotFoundException {
         String fileName = null;
-        if (_params.length == 0) {
+        if (passedParams.length == 0) {
             throw new FileNotFoundException("Missing input file");
         } else
-            fileName = _params[0];
+            fileName = passedParams[0];
         return fileName;
     }
 
@@ -77,6 +86,12 @@ public class LogicalOperations {
         database = updatedDatabase;
     }
 
+    /**
+     * Method used to get together two private methods in one spot. It is used also in tests so code looks cleaner.
+     * @param passedParamsToModel List of passed params to model.
+     * @throws IOException When I/O exception happens.
+     * @throws FileNotFoundException When file hasn't been found.
+     */
     public void prepareDatabase(String[] passedParamsToModel) throws IOException, FileNotFoundException {
         setFileName(check(passedParamsToModel));
         loadFile();
@@ -143,6 +158,7 @@ public class LogicalOperations {
      *
      * @return max Superhero with the biggest amount of superpowers.
      */
+    @MainFunctionalityMethods
     public Superhero findWithMostSuperpowers() {
         Superhero max = getDatabase().get(0);
         for (Superhero temp : getDatabase()) {
@@ -156,11 +172,12 @@ public class LogicalOperations {
      * Sorting superheroes in descending order depending on highest amount of superpowers using overrided method compareTo
      * and Comparable interface created in Superhero class.
      */
+    @MainFunctionalityMethods
     private void mySort() {
         Collections.sort(database);
     }
     /**
-     * Method used to count number of superhero's types.
+     * Method used to count amount of superhero's types.
      * Each index represents one superhero and their amount of types.
      *
      * @return tempArray ArrayList containing amount of types of each superhero.
@@ -168,14 +185,14 @@ public class LogicalOperations {
     private ArrayList<Double> collectTypesIntoArray() {
         ArrayList<Double> tempArray = new ArrayList();
         for (Superhero supe : database) {
-            Double d = Double.valueOf(supe.getTypes().size());
+            Double d = (double) supe.getTypes().size();
             tempArray.add(d);
         }
         return tempArray;
     }
 
     /**
-     * Method used to count number of universe affiliations of every superhero.
+     * Method used to count amount of universe affiliations of every superhero.
      * Each index represents one superhero and their amount of affiliations.
      *
      * @return tempArray ArrayList containing amount of affiliations per every superhero.
@@ -183,7 +200,7 @@ public class LogicalOperations {
     private ArrayList<Double> collectUniversesIntoArray() {
         ArrayList<Double> tempArray = new ArrayList();
         for (Superhero supe : database) {
-            Double d = Double.valueOf(supe.getUniverses().size());
+            Double d = (double) supe.getUniverses().size();
             tempArray.add(d);
         }
         return tempArray;
@@ -198,6 +215,7 @@ public class LogicalOperations {
      *
      * @return corr Value of correlation factor.
      */
+    @MainFunctionalityMethods
     public double calculatePearsonCorrelation() {
         ArrayList<Double> typeArray = collectTypesIntoArray();
         ArrayList<Double> universeArray = collectUniversesIntoArray();
@@ -205,7 +223,7 @@ public class LogicalOperations {
         arr = typeArray.toArray(arr);
         double[] tArray = ArrayUtils.toPrimitive(arr);
         Double[] arr2 = new Double[universeArray.size()];
-        arr2 = typeArray.toArray(arr2);
+        arr2 = universeArray.toArray(arr2);
         double[] uArray = ArrayUtils.toPrimitive(arr2);
         double corr = new PearsonsCorrelation().correlation(tArray, uArray);
         System.out.println(corr);
@@ -226,38 +244,31 @@ public class LogicalOperations {
             counter++;
         }
         return null;
-
     }
 
     /**
-     * Creating ArrayList of superheroes that are affiliated with chosen universe by user
+     * Creating ArrayList of superheroes that are affiliated with chosen universe by user.
+     * This method uses Stream to process data./
      *
      * @param chosenUniverse Name of the chosen universe by user.
-     * @return tempArray Array of superheroes from chosen universe
+     * @return foundSuperheroes Array of superheroes from chosen universe
      */
-    public ArrayList<Superhero> findSuperheroesFromUniverse(String chosenUniverse) {
-        ArrayList<Superhero> tempArray = new ArrayList();
-        for (Superhero supe : database) {
-            boolean belongs = false;
-            for (String uni : supe.getUniverses()) {
-                if (uni.equals(chosenUniverse)) {
-                    belongs = true;
-                    break;
-                }
-            }
-            if (belongs)
-                tempArray.add(supe);
-        }
-        return tempArray;
+    @MainFunctionalityMethods
+    public ArrayList<Superhero> findSuperheroesFromUniverseUsingStream(String chosenUniverse){
+        List<Superhero> foundSuperheroes;
+        foundSuperheroes = database.stream()
+                .filter(superhero -> superhero.universes.contains(chosenUniverse))
+                .collect(Collectors.toList());
+        return (ArrayList<Superhero>) foundSuperheroes;
     }
     /**
      * Checks if option chosen by user is in range given by application - if not, a custom exception is thrown to be handled in controller.
      * Return false is not needed, because exception will be thrown instead of it.
      *
-     * @param maxRange     Highest possible option available in application.
-     * @param chosenOption A number representing user's choice
-     * @return true if choice is correct
-     * @throws UserInfoException if choice was incorrect
+     * @param maxRange Highest possible option available in method, which called this one.
+     * @param chosenOption A number representing user's choice.
+     * @return true if choice is correct.
+     * @throws UserInfoException if choice was out of bounds.
      */
     public boolean checkIfCorrect(int maxRange, int chosenOption) throws UserInfoException {
         if (chosenOption > maxRange || chosenOption < 1) {
