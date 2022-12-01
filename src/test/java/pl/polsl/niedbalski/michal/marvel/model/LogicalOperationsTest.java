@@ -1,6 +1,5 @@
 package pl.polsl.niedbalski.michal.marvel.model;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -9,16 +8,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Michał Niedbalski
- * @version 1.0
+ * @version 2.0
  */
-class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. (Add general functions.)
+class LogicalOperationsTest {
     /**
      * Test of findWithMostSuperpowers method, of class LogicalOperations.
      * Checking if superhero returned from method findWithMostSuperpowers() is the same that the one at the top of database (database is sorted by amount of superpowers in descending order)
@@ -26,11 +24,10 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
     @ParameterizedTest
     @ValueSource (ints={0})
     void findWithMostSuperpowers(int indexOfSuperhero) {
-        String[] testParams = {"E:/JWIiUM/Niedbalski.Michal.cw2.prototyp/Niedbalski.Michal.cw1.final/src/main/resources/Marvel Characters.csv"};
+        //String[] testParams = {"E:/JWIiUM/Niedbalski.Michal.cw2.prototyp/Niedbalski.Michal.cw1.final/src/main/resources/Marvel Characters.csv"};
         LogicalOperations testLogical = new LogicalOperations();
         try {
-            ArrayList<Superhero> testSuperheroes;
-            testLogical.prepareDatabase(testParams);
+            testLogical.prepareDatabase();
             Superhero withMostSuperpowers = testLogical.findWithMostSuperpowers();
             assertEquals(withMostSuperpowers, testLogical.getDatabase().get(indexOfSuperhero), "Expected superheroes to be equal, but they aren't.");
 
@@ -47,11 +44,10 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
     @ParameterizedTest
     @ValueSource (ints={1,2,3,4,5,6,7,8})
     void findWithMostSuperpowersWrongIndex(int indexOfSuperhero) {
-        String[] testParams = {"E:/JWIiUM/Niedbalski.Michal.cw2.prototyp/Niedbalski.Michal.cw1.final/src/main/resources/Marvel Characters.csv"};
+        //String[] testParams = {"E:/JWIiUM/Niedbalski.Michal.cw2.prototyp/Niedbalski.Michal.cw1.final/src/main/resources/Marvel Characters.csv"};
         LogicalOperations testLogical = new LogicalOperations();
         try {
-            ArrayList<Superhero> testSuperheroes;
-            testLogical.prepareDatabase(testParams);
+            testLogical.prepareDatabase();
             Superhero withMostSuperpowers = testLogical.findWithMostSuperpowers();
             assertNotEquals(withMostSuperpowers, testLogical.getDatabase().get(indexOfSuperhero), "Expected superheroes to be equal, but they aren't.");
 
@@ -94,38 +90,7 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
         assertEquals(-1,testLogical.calculatePearsonCorrelation(),"Value returned from Pearson Correlation method is not equal to the one calculated externally.");
 
     }
-    /**
-     * Test of chosenUniverse method, of class LogicalOperations.
-     * Test checks whether user choice matches position of universe in collection.
-     * If user has inputted number 1, they chose ZMiTAC universe.
-     * Displaying method starts displaying choices starting at number one, henceforth if number 1 is inputted, element on position 0 will be chosen.
-     */
-    @ParameterizedTest
-    @ValueSource(ints = {2})
-    void chosenUniverseCorrect(int choice) {
-        LogicalOperations testLogical = new LogicalOperations();
-        Set<String> tempValues = new HashSet();
-        tempValues.add("ZMiTAC");
-        tempValues.add("Marvel Universe");
-        tempValues.add("Earth-616");
-        testLogical.setUniverses(tempValues);
-        assertEquals("Marvel Universe",testLogical.chosenUniverse(choice), "Returned universe is not the same as it was expected.");
-    }
-    /**
-     * Test of chosenUniverse method, of class LogicalOperations.
-     * Test checks, with obviously wrong data, whether user choice matches position of universe in collection.
-     */
-    @ParameterizedTest
-    @ValueSource(ints = {-3,214,0})
-    void chosenUniverseWrongInput(int choice) {
-        LogicalOperations testLogical = new LogicalOperations();
-        Set<String> tempValues = new HashSet();
-        tempValues.add("ZMiTAC");
-        tempValues.add("Marvel Universe");
-        tempValues.add("Earth-616");
-        testLogical.setUniverses(tempValues);
-        assertNotEquals("Marvel Universe",testLogical.chosenUniverse(choice), "Returned universe is matching the one in set, which was not planned.");
-    }
+
     /**
      * Test of findSuperheroesFromUniverse method, of class LogicalOperations.
      * The purpose of this test is to check if method finding superheroes affiliated with chosen universe works correctly.
@@ -138,7 +103,7 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
         LogicalOperations testLogical = new LogicalOperations();
         try {
             ArrayList<Superhero> testSuperheroes;
-            testLogical.prepareDatabase(testParams);
+            testLogical.prepareDatabase();
             testSuperheroes = testLogical.findSuperheroesFromUniverseUsingStream(testUniverse);
             for (Superhero tested: testSuperheroes){
                 String tempUniverse = null;
@@ -169,7 +134,7 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
         LogicalOperations testLogical = new LogicalOperations();
         try {
             ArrayList<Superhero> testSuperheroes = new ArrayList();
-            testLogical.prepareDatabase(testParams);
+            testLogical.prepareDatabase();
             testSuperheroes = testLogical.findSuperheroesFromUniverseUsingStream(testUniverse);
             for (Superhero tested: testSuperheroes){
                 String tempUniverse = null;
@@ -186,33 +151,6 @@ class LogicalOperationsTest { //TODO: Optimize code so no copy + paste is made. 
         catch (IOException ex) {
 
         }
-    }
-    /**
-     * Test of checkIfCorrect method, of class LogicalOperations.
-     * Test checks if correct values will work properly.
-     */
-    @ParameterizedTest
-    @ValueSource(ints = {1,2,3,4})
-    void checkIfCorrectOutput(int testedValue) {
-        try {
-            LogicalOperations testLogical = new LogicalOperations();
-            assertTrue(testLogical.checkIfCorrect(4, testedValue));
-        }
-        catch(UserInfoException e){
-            //Catch won't be reached anyway.
-        }
-    }
-    /**
-     * Test of checkIfCorrect method, of class LogicalOperations.
-     * Test checks if incorrect values will throw exception.
-     */
-    @ParameterizedTest
-    @ValueSource(ints = {0,-5,8,-2,5})
-    void checkIfCorrectExceptionThrow(int testedValue) {
-        LogicalOperations testLogical = new LogicalOperations();
-        UserInfoException thrown = Assertions.assertThrows(UserInfoException.class, () -> {
-            testLogical.checkIfCorrect(4,testedValue);
-        }, "UserInfoException was expected");
     }
     /**
      * Test of checkIfFileExists method, of class LogicalOperations.

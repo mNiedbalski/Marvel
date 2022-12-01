@@ -1,0 +1,451 @@
+# Created at 2022-11-30T18:09:43.410
+Unexpected IOException: I,1,java.specification.version,17
+
+
+# Created at 2022-11-30T18:09:43.411
+Unexpected IOException: I,1,sun.cpu.isalist,amd64
+
+
+# Created at 2022-11-30T18:09:43.411
+Unexpected IOException: I,1,sun.jnu.encoding,Cp1250
+
+
+# Created at 2022-11-30T18:09:43.412
+Unexpected IOException: I,1,java.class.path,E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp\005Ctarget\005Ctest-classes;E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp\005Ctarget\005Cclasses;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Cjakarta\005Cplatform\005Cjakarta.jakartaee-api\005C8.0.0\005Cjakarta.jakartaee-api-8.0.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-csv\005C1.9.0\005Ccommons-csv-1.9.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-lang3\005C3.12.0\005Ccommons-lang3-3.12.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-math3\005C3.6.1\005Ccommons-math3-3.6.1.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-api\005C5.6.0\005Cjunit-jupiter-api-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Copentest4j\005Copentest4j\005C1.2.0\005Copentest4j-1.2.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-commons\005C1.6.0\005Cjunit-platform-commons-1.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-params\005C5.6.0\005Cjunit-jupiter-params-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-engine\005C5.6.0\005Cjunit-jupiter-engine-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-engine\005C1.6.0\005Cjunit-platform-engine-1.6.0.jar;
+
+
+# Created at 2022-11-30T18:09:43.412
+Unexpected IOException: I,1,java.vm.vendor,Oracle Corporation
+
+
+# Created at 2022-11-30T18:09:43.413
+Unexpected IOException: I,1,sun.arch.data.model,64
+
+
+# Created at 2022-11-30T18:09:43.413
+Unexpected IOException: I,1,user.variant,
+
+
+# Created at 2022-11-30T18:09:43.414
+Unexpected IOException: I,1,java.vendor.url,https://java.oracle.com/
+
+
+# Created at 2022-11-30T18:09:43.414
+Unexpected IOException: I,1,user.timezone,Europe/Warsaw
+
+
+# Created at 2022-11-30T18:09:43.414
+Unexpected IOException: I,1,java.vm.specification.version,17
+
+
+# Created at 2022-11-30T18:09:43.415
+Unexpected IOException: I,1,os.name,Windows 10
+
+
+# Created at 2022-11-30T18:09:43.415
+Unexpected IOException: I,1,sun.java.launcher,SUN_STANDARD
+
+
+# Created at 2022-11-30T18:09:43.416
+Unexpected IOException: I,1,user.country,PL
+
+
+# Created at 2022-11-30T18:09:43.416
+Unexpected IOException: I,1,sun.boot.library.path,E:\005CProgram Files\005CNew Folder\005Cbin
+
+
+# Created at 2022-11-30T18:09:43.416
+Unexpected IOException: I,1,sun.java.command,C:\005CUsers\005Cminio\005CAppData\005CLocal\005CTemp\005Csurefire2553962075548141047\005Csurefirebooter2370598351326264325.jar C:\005CUsers\005Cminio\005CAppData\005CLocal\005CTemp\005Csurefire2553962075548141047 2022-11-30T18-09-42_811-jvmRun1 surefire14226929387541158891tmp surefire_0979795932480110709tmp
+
+
+# Created at 2022-11-30T18:09:43.418
+Unexpected IOException: I,1,jdk.debug,release
+
+
+# Created at 2022-11-30T18:09:43.418
+Unexpected IOException: I,1,surefire.test.class.path,E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp\005Ctarget\005Ctest-classes;E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp\005Ctarget\005Cclasses;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Cjakarta\005Cplatform\005Cjakarta.jakartaee-api\005C8.0.0\005Cjakarta.jakartaee-api-8.0.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-csv\005C1.9.0\005Ccommons-csv-1.9.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-lang3\005C3.12.0\005Ccommons-lang3-3.12.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-math3\005C3.6.1\005Ccommons-math3-3.6.1.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-api\005C5.6.0\005Cjunit-jupiter-api-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Copentest4j\005Copentest4j\005C1.2.0\005Copentest4j-1.2.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-commons\005C1.6.0\005Cjunit-platform-commons-1.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-params\005C5.6.0\005Cjunit-jupiter-params-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cjupiter\005Cjunit-jupiter-engine\005C5.6.0\005Cjunit-jupiter-engine-5.6.0.jar;C:\005CUsers\005Cminio\005C.m2\005Crepository\005Corg\005Cjunit\005Cplatform\005Cjunit-platform-engine\005C1.6.0\005Cjunit-platform-engine-1.6.0.jar;
+
+
+# Created at 2022-11-30T18:09:43.419
+Unexpected IOException: I,1,sun.cpu.endian,little
+
+
+# Created at 2022-11-30T18:09:43.419
+Unexpected IOException: I,1,user.home,C:\005CUsers\005Cminio
+
+
+# Created at 2022-11-30T18:09:43.420
+Unexpected IOException: I,1,user.language,pl
+
+
+# Created at 2022-11-30T18:09:43.420
+Unexpected IOException: I,1,java.specification.vendor,Oracle Corporation
+
+
+# Created at 2022-11-30T18:09:43.420
+Unexpected IOException: I,1,java.version.date,2022-08-18
+
+
+# Created at 2022-11-30T18:09:43.421
+Unexpected IOException: I,1,java.home,E:\005CProgram Files\005CNew Folder
+
+
+# Created at 2022-11-30T18:09:43.421
+Unexpected IOException: I,1,file.separator,\005C
+
+
+# Created at 2022-11-30T18:09:43.422
+Unexpected IOException: I,1,basedir,E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp
+
+
+# Created at 2022-11-30T18:09:43.422
+Unexpected IOException: I,1,java.vm.compressedOopsMode,Zero based
+
+
+# Created at 2022-11-30T18:09:43.422
+Unexpected IOException: I,1,line.separator,\000D\000A
+
+
+# Created at 2022-11-30T18:09:43.423
+Unexpected IOException: I,1,java.vm.specification.vendor,Oracle Corporation
+
+
+# Created at 2022-11-30T18:09:43.423
+Unexpected IOException: I,1,java.specification.name,Java Platform API Specification
+
+
+# Created at 2022-11-30T18:09:43.423
+Unexpected IOException: I,1,surefire.real.class.path,C:\005CUsers\005Cminio\005CAppData\005CLocal\005CTemp\005Csurefire2553962075548141047\005Csurefirebooter2370598351326264325.jar
+
+
+# Created at 2022-11-30T18:09:43.424
+Unexpected IOException: I,1,user.script,
+
+
+# Created at 2022-11-30T18:09:43.425
+Unexpected IOException: I,1,sun.management.compiler,HotSpot 64-Bit Tiered Compilers
+
+
+# Created at 2022-11-30T18:09:43.425
+Unexpected IOException: I,1,java.runtime.version,17.0.4.1+1-LTS-2
+
+
+# Created at 2022-11-30T18:09:43.425
+Unexpected IOException: I,1,user.name,minio
+
+
+# Created at 2022-11-30T18:09:43.426
+Unexpected IOException: I,1,path.separator,;
+
+
+# Created at 2022-11-30T18:09:43.426
+Unexpected IOException: I,1,os.version,10.0
+
+
+# Created at 2022-11-30T18:09:43.426
+Unexpected IOException: I,1,java.runtime.name,Java(TM) SE Runtime Environment
+
+
+# Created at 2022-11-30T18:09:43.427
+Unexpected IOException: I,1,file.encoding,UTF-8
+
+
+# Created at 2022-11-30T18:09:43.427
+Unexpected IOException: I,1,java.vm.name,Java HotSpot(TM) 64-Bit Server VM
+
+
+# Created at 2022-11-30T18:09:43.427
+Unexpected IOException: I,1,maven.ext.class.path,E:\005CNetBeans\005CNetBeans-15\005Cnetbeans\005Cjava\005Cmaven-nblib\005Cnetbeans-eventspy.jar
+
+
+# Created at 2022-11-30T18:09:43.428
+Unexpected IOException: I,1,localRepository,C:\005CUsers\005Cminio\005C.m2\005Crepository
+
+
+# Created at 2022-11-30T18:09:43.428
+Unexpected IOException: I,1,java.vendor.url.bug,https://bugreport.java.com/bugreport/
+
+
+# Created at 2022-11-30T18:09:43.428
+Unexpected IOException: I,1,java.io.tmpdir,C:\005CUsers\005Cminio\005CAppData\005CLocal\005CTemp\005C
+
+
+# Created at 2022-11-30T18:09:43.429
+Unexpected IOException: I,1,java.version,17.0.4.1
+
+
+# Created at 2022-11-30T18:09:43.429
+Unexpected IOException: I,1,user.dir,E:\005CJWIiUM\005CNetBeans projekty sprawdzanie\005CMarvelWebApp
+
+
+# Created at 2022-11-30T18:09:43.429
+Unexpected IOException: I,1,os.arch,amd64
+
+
+# Created at 2022-11-30T18:09:43.430
+Unexpected IOException: I,1,java.vm.specification.name,Java Virtual Machine Specification
+
+
+# Created at 2022-11-30T18:09:43.430
+Unexpected IOException: I,1,sun.os.patch.level,
+
+
+# Created at 2022-11-30T18:09:43.430
+Unexpected IOException: I,1,native.encoding,Cp1250
+
+
+# Created at 2022-11-30T18:09:43.431
+Unexpected IOException: I,1,java.library.path,E:\005CProgram Files\005CNew Folder\005Cbin;C:\005CWindows\005CSun\005CJava\005Cbin;C:\005CWindows\005Csystem32;C:\005CWindows;E:\005CVMware\005CVMware Player\005Cbin\005C;C:\005CProgram Files\005CCommon Files\005COracle\005CJava\005Cjavapath;C:\005CProgramData\005COracle\005CJava\005Cjavapath;C:\005CPython310\005CScripts\005C;C:\005CPython310\005C;C:\005CProgram Files (x86)\005CRazer Chroma SDK\005Cbin;C:\005CProgram Files\005CRazer Chroma SDK\005Cbin;C:\005CProgram Files (x86)\005CRazer\005CChromaBroadcast\005Cbin;C:\005CProgram Files\005CRazer\005CChromaBroadcast\005Cbin;I:\005COculus\005CSupport\005Coculus-runtime;C:\005CWindows\005Csystem32;C:\005CWindows;C:\005CWindows\005CSystem32\005CWbem;C:\005CWindows\005CSystem32\005CWindowsPowerShell\005Cv1.0\005C;C:\005CWindows\005CSystem32\005COpenSSH\005C;G;C:\005CWindows\005Csystem32\005Cconfig\005Csystemprofile\005CAppData\005CLocal\005CMicrosoft\005CWindowsApps;C:\005CUsers\005Cminio\005CAppData\005CLocal\005CMicrosoft\005CWindowsApps;G:\005CProgram Files\005CMiKTeX\005Cmiktex\005Cbin\005Cx64\005C;C:\005CUsers\005Cminio\005CAppData\005CLocal\005CGitHubDesktop\005Cbin;G:\005CProgram Files\005CGit\005Ccmd;F:\005CProgram Files\005CNode.js\005C;C:\005CProgramData\005Cchocolatey\005Cbin;C:\005CProgram Files\005CMicrosoft SQL Server\005C150\005CTools\005CBinn\005C;C:\005CProgram Files\005CMicrosoft SQL Server\005CClient SDK\005CODBC\005C170\005CTools\005CBinn\005C;C:\005CProgram Files\005Cdotnet\005C;C:\005CUsers\005Cminio\005CAppData\005CLocal\005CMicrosoft\005CWindowsApps;G:\005CProgram Files\005CMiKTeX\005Cmiktex\005Cbin\005Cx64\005C;C:\005CUsers\005Cminio\005CAppData\005CLocal\005CGitHubDesktop\005Cbin;G:\005CPliki program\00F3w (x86)\005CWebStorm 2021.3.2\005Cbin;;C:\005CUsers\005Cminio\005CAppData\005CRoaming\005Cnpm;G:\005CProgram Files\005CMicrosoft VS Code\005Cbin;E:\005CProgram Files\005CIntelliJ IDEA 2022.2.3\005Cbin;;C:\005CUsers\005Cminio\005C.dotnet\005Ctools;.
+
+
+# Created at 2022-11-30T18:09:43.431
+Unexpected IOException: I,1,java.vm.info,mixed mode\002C sharing
+
+
+# Created at 2022-11-30T18:09:43.432
+Unexpected IOException: I,1,java.vendor,Oracle Corporation
+
+
+# Created at 2022-11-30T18:09:43.432
+Unexpected IOException: I,1,java.vm.version,17.0.4.1+1-LTS-2
+
+
+# Created at 2022-11-30T18:09:43.432
+Unexpected IOException: I,1,sun.io.unicode.encoding,UnicodeLittle
+
+
+# Created at 2022-11-30T18:09:43.432
+Unexpected IOException: I,1,java.class.version,61.0
+
+
+# Created at 2022-11-30T18:09:43.484
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,null,null,null
+
+
+# Created at 2022-11-30T18:09:43.515
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.538
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.568
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.571
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.572
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.578
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.580
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.581
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.590
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseBadData{String}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.593
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,checkIfFileExists{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.594
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.597
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,checkIfFileExists{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.599
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,checkIfFileExistsWrongParameter{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.600
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.602
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,checkIfFileExistsWrongParameter{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.604
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.605
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.610
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.612
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.613
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.618
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.619
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.620
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.625
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findSuperheroesFromUniverseCorrect{String}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.627
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowers{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.628
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.632
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowers{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.633
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.634
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.639
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.641
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.641
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.645
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[2],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.646
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.647
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.650
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[3],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.651
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[4],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.653
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.656
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[4],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.657
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[5],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.658
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.661
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[5],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.663
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[6],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.663
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.667
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[6],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.669
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[7],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.670
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.673
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[7],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.674
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[8],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.675
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.677
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,findWithMostSuperpowersWrongIndex{int}[8],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.680
+Unexpected IOException: 5,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,calculatePearsonCorrelation{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.680
+Unexpected IOException with stream: E:\JWIiUM\NetBeans projekty sprawdzanie\MarvelWebApp\.
+
+
+# Created at 2022-11-30T18:09:43.691
+Unexpected IOException with stream: -1.0
+
+# Created at 2022-11-30T18:09:43.691
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-30T18:09:43.692
+Unexpected IOException: 6,1,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,calculatePearsonCorrelation{int}[1],null,null,null
+
+
+# Created at 2022-11-30T18:09:43.694
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,pl.polsl.niedbalski.michal.marvel.model.LogicalOperationsTest,null,null,null
+
+

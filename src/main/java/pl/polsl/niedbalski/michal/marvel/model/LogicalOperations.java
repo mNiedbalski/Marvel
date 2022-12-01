@@ -1,5 +1,6 @@
 package pl.polsl.niedbalski.michal.marvel.model;
 
+import java.io.File;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * Class handling all data processing and giving outputs. This class is representing model in MVC pattern.
  * @author Michał Niedbalski
- * @version 2.0
+ * @version 3.0
  */
 public class LogicalOperations {
 
@@ -35,6 +36,10 @@ public class LogicalOperations {
      */
     private Path filePath;
 
+    public LogicalOperations(){
+    File directory = new File("./");
+    System.out.println(directory.getAbsolutePath());
+    }
     /**
      * Method that checks, whether parameters were inputted or not and if not, exception is thrown
      *
@@ -66,7 +71,8 @@ public class LogicalOperations {
         return filePath;
     }
 
-    private void setFileName(String passedFilePath) {
+    private void setFileName() {
+        String passedFilePath="E:/JWIiUM/NetBeans projekty sprawdzanie/MarvelWebApp/src/main/resources/Marvel Characters.csv";
         filePath = Paths.get(passedFilePath);
     }
 
@@ -92,13 +98,14 @@ public class LogicalOperations {
      * @throws IOException When I/O exception happens.
      * @throws FileNotFoundException When file hasn't been found.
      */
-    public void prepareDatabase(String[] passedParamsToModel) throws IOException, FileNotFoundException {
-        setFileName(check(passedParamsToModel));
+    public void prepareDatabase() throws IOException, FileNotFoundException {
+        setFileName();
         loadFile();
+        
     }
     /**
      * Method using great features from commons-csv library in order to load data from .csv file into application.
-     * In every iteration of for loop a temporary Superhero is created, who will have it's attributes assigned using method csvRecord.get().
+     * In every iteration of for loop a temporary Superhero is created, who will have its attributes assigned using method csvRecord.get().
      * In specific case where superhero's attribute is an array of elements, the string read from one cell from .csv file is being parsed by method ParseStringIntoArrayList().
      * After every attribute is assigned, superhero is added to the database in program.
      *
@@ -231,24 +238,8 @@ public class LogicalOperations {
     }
 
     /**
-     * Returning chosen universe to display superheroes affiliated.
-     *
-     * @param choice Chosen index of universe
-     * @return element chosen universe.
-     */
-    public String chosenUniverse(int choice) {
-        int counter = 1;
-        for (String element : universes) {
-            if (counter == choice)
-                return element;
-            counter++;
-        }
-        return null;
-    }
-
-    /**
      * Creating ArrayList of superheroes that are affiliated with chosen universe by user.
-     * This method uses Stream to process data./
+     * This method uses Stream to process data.
      *
      * @param chosenUniverse Name of the chosen universe by user.
      * @return foundSuperheroes Array of superheroes from chosen universe
@@ -259,22 +250,14 @@ public class LogicalOperations {
         foundSuperheroes = database.stream()
                 .filter(superhero -> superhero.universes.contains(chosenUniverse))
                 .collect(Collectors.toList());
+        Map<String,Superhero> processedSuperheroes = new HashMap();
+        for (Superhero temp: foundSuperheroes)
+            processedSuperheroes.put(temp.getCharName(),temp);
+        foundSuperheroes.clear();
+        for (Map.Entry<String,Superhero> entry : processedSuperheroes.entrySet())
+            foundSuperheroes.add(entry.getValue());
+        Collections.sort(foundSuperheroes);
         return (ArrayList<Superhero>) foundSuperheroes;
-    }
-    /**
-     * Checks if option chosen by user is in range given by application - if not, a custom exception is thrown to be handled in controller.
-     * Return false is not needed, because exception will be thrown instead of it.
-     *
-     * @param maxRange Highest possible option available in method, which called this one.
-     * @param chosenOption A number representing user's choice.
-     * @return true if choice is correct.
-     * @throws UserInfoException if choice was out of bounds.
-     */
-    public boolean checkIfCorrect(int maxRange, int chosenOption) throws UserInfoException {
-        if (chosenOption > maxRange || chosenOption < 1) {
-            throw new UserInfoException("Your choice is out of bounds!");
-        } else
-            return true;
     }
 
     /**
