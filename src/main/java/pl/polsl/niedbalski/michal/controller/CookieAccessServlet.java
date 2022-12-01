@@ -1,49 +1,54 @@
 package pl.polsl.niedbalski.michal.controller;
 
-import java.io.IOException;
+import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import pl.polsl.niedbalski.michal.marvel.model.LogicalOperations;
-import pl.polsl.niedbalski.michal.marvel.view.UserInterface;
+import javax.servlet.http.*;
 
 /**
- * Servlet presenting superheroes from chosen universe.
+ * Servlet presenting the use of cookies
+ *
  * @author Michał Niedbalski
  * @version 1.0
  */
-@WebServlet("/BrowsingSpecificUniverse")
-public class BrowsingUniverseServlet extends HttpServlet {
-
-/**
- * Class field representing model in MVC
- */
-    private LogicalOperations logicalOperations = new LogicalOperations();
- /**
- * Class field partly representing view in MVC
- */
-    private UserInterface userInterface = new UserInterface();
+@WebServlet("/CookieAccess")
+public class CookieAccessServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request
-     * @param response servlet response
+     * @param req servlet request
+     * @param resp servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html; charset=ISO-8859-2");
-        logicalOperations.prepareDatabase();
-        request.setAttribute("superheroes",logicalOperations.findSuperheroesFromUniverseUsingStream(request.getParameter("universe")));
-        request.getRequestDispatcher("/WEB-INF/PrintingHeroesPage.jsp").forward(request,response);
-        response.sendRedirect("/WEB-INF/PrintingHeroesPage.jsp");
-    }
-     /**
+        Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    switch (cookie.getName()) {
+                        case "affiliationVisits":
+                            request.setAttribute("affiliationVisits",cookie.getValue());
+                            break;
+                        case "pearsonCorrVisits":
+                            request.setAttribute("pearsonCorrVisits",cookie.getValue());
+                            break;
+                        case "strongestVisits":
+                            request.setAttribute("strongestVisits",cookie.getValue());
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        request.getRequestDispatcher("/WEB-INF/CookiesPage.jsp").forward(request,response);
+        response.sendRedirect("/WEB-INF/CookiesPage.jsp");
+        }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
      * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
@@ -52,7 +57,7 @@ public class BrowsingUniverseServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -78,6 +83,7 @@ public class BrowsingUniverseServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Servlet presenting superheroes from chosen universe.";
-    }
+        return "Servlet presenting the use of cookies.";
+    }// </editor-fold>
+
 }

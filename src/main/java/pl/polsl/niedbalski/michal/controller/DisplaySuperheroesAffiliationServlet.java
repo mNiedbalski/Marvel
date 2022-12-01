@@ -2,10 +2,10 @@
 package pl.polsl.niedbalski.michal.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,14 +13,20 @@ import pl.polsl.niedbalski.michal.marvel.model.LogicalOperations;
 import pl.polsl.niedbalski.michal.marvel.view.UserInterface;
 
 /**
- *
+ * Servlet presenting available universes to browse.
  * @author Michał Niedbalski
  * @version 1.0
  */
 @WebServlet("/BrowseUniverses")
 public class DisplaySuperheroesAffiliationServlet extends HttpServlet {
 
+/**
+ * Class field representing model in MVC
+ */
     private LogicalOperations logicalOperations = new LogicalOperations();
+ /**
+ * Class field partly representing view in MVC
+ */
     private UserInterface userInterface = new UserInterface();
 
     /**
@@ -35,6 +41,27 @@ public class DisplaySuperheroesAffiliationServlet extends HttpServlet {
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html; charset=ISO-8859-2");
+        Cookie[] cookies = request.getCookies();
+        Cookie counterCookie = new Cookie("affiliationVisits","0");
+        boolean foundCookie = false;
+        if (cookies!=null){
+            for (Cookie cookie : cookies){
+                if (cookie.getName().equals("affiliationVisits")){
+                    int counter = Integer.parseInt(cookie.getValue());
+                    counter++;
+                    cookie.setValue(Integer.toString(counter));
+                    response.addCookie(cookie);
+                    foundCookie = true;
+                    break;
+                }
+            }
+            if (!foundCookie){
+            response.addCookie(counterCookie); 
+            }
+        }
+        else{
+            response.addCookie(counterCookie);
+        }
         logicalOperations.prepareDatabase();
         ArrayList<String> universes = new ArrayList();
         for (String universe: logicalOperations.getUniverses()){
@@ -79,6 +106,6 @@ public class DisplaySuperheroesAffiliationServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Servlet presenting available universes to browse.";
     }
 }

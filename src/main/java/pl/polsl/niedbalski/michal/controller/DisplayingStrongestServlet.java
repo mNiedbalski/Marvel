@@ -8,14 +8,20 @@ import pl.polsl.niedbalski.michal.marvel.model.LogicalOperations;
 import pl.polsl.niedbalski.michal.marvel.view.UserInterface;
 
 /**
- * Displaying superhero with most superpowers.
+ * Displaying superhero with most superpowers servlet.
  * @author Michał Niedbalski
  * @version 1.0
  */
 @WebServlet("/DisplaySuperhero")
 public class DisplayingStrongestServlet extends HttpServlet {
 
+/**
+ * Class field representing model in MVC
+ */
     private LogicalOperations logicalOperations = new LogicalOperations();
+ /**
+ * Class field partly representing view in MVC
+ */
     private UserInterface userInterface = new UserInterface();
     
     /**
@@ -33,7 +39,27 @@ public class DisplayingStrongestServlet extends HttpServlet {
         logicalOperations.prepareDatabase();
         File directory = new File("./");
         request.setAttribute("path", directory.getAbsolutePath());
-        
+        Cookie[] cookies = request.getCookies();
+        Cookie counterCookie = new Cookie("strongestVisits","0");
+        boolean foundCookie = false;
+        if (cookies!=null){
+            for (Cookie cookie : cookies){
+                if (cookie.getName().equals("strongestVisits")){
+                    int counter = Integer.parseInt(cookie.getValue());
+                    counter++;
+                    cookie.setValue(Integer.toString(counter));
+                    response.addCookie(cookie);
+                    foundCookie = true;
+                    break;
+                }
+            }
+            if (!foundCookie){
+            response.addCookie(counterCookie); 
+            }
+        }
+        else{
+            response.addCookie(counterCookie);
+        }
         request.setAttribute("strongest", userInterface.displaySuperhero(logicalOperations.findWithMostSuperpowers()));
         request.getRequestDispatcher("/WEB-INF/StrongestSuperheroPage.jsp").forward(request,response);
         response.sendRedirect("/WEB-INF/StrongestSuperheroPage.jsp");
@@ -73,7 +99,7 @@ public class DisplayingStrongestServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Displaying superhero with most superpowers servlet.";
     }
 
 }

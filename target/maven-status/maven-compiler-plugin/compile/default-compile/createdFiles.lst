@@ -8,4 +8,5 @@ pl\polsl\niedbalski\michal\marvel\model\MainFunctionalityMethods.class
 pl\polsl\niedbalski\michal\marvel\model\UserInfoException.class
 pl\polsl\lab\marvel\resources\JakartaEE8Resource.class
 pl\polsl\niedbalski\michal\controller\BrowsingUniverseServlet.class
+pl\polsl\niedbalski\michal\controller\CookieAccessServlet.class
 pl\polsl\niedbalski\michal\marvel\model\LogicalOperations.class
